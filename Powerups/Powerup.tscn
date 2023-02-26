@@ -1,9 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Powerups/Powerup.gd" type="Script" id=1]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 23, 23 )
+[ext_resource path="res://Assets/580b585b2edbce24c47b2a2f.png" type="Texture" id=2]
 
 [node name="Powerup" type="Area2D"]
 script = ExtResource( 1 )
@@ -13,8 +11,14 @@ margin_left = -23.0
 margin_top = -23.0
 margin_right = 23.0
 margin_bottom = 23.0
+color = Color( 1, 1, 1, 0 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+[node name="Sprite2" type="Sprite" parent="."]
+scale = Vector2( 0.194867, 0.194867 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 0.194258, 0.194258 )
+polygon = PoolVector2Array( 33, -148.9, 33, -147.4, 109, -118.4, 109, -117, 113, -114, 113, -106, 110.8, -106, 109, -104.2, 109, -77, 109.7, -77, 112.7, -57, 123, -38.5, 123, -14, 121.5, -14, 113, 17, 113, 22.7, 118, 37.7, 118, 39.1, 114.9, 99, 113.2, 99, 105.2, 114, 103.7, 114, 88.7, 127, 85.6, 127, 61.5, 140, 58.3, 140, 51, 142.4, 44.8, 149, 39.2, 149, 27.3, 150, 13, 150, 13, 149.4, -42, 128.4, -42, 127.1, -74, 107.1, -74, 105.9, -85, 95.9, -85, 93.5, -96, 75.6, -96, 71.4, -119, 12.4, -119, 4, -123, -9.7, -123, -52, -121.8, -52, -118.8, -77, -117.7, -77, -115.7, -90, -114.3, -90, -106.3, -107, -104.8, -107, -78.8, -133, -76.7, -133, -57.6, -146, -54.3, -146, -40.7, -150, 12.7, -150 )
 
 [connection signal="body_entered" from="." to="." method="_on_Powerup_body_entered"]
